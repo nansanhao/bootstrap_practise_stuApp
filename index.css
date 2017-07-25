@@ -1,0 +1,21 @@
+.head{
+    margin: auto;
+    width: 100px;
+
+}
+.box{
+    width: 200px;
+    height: 200px;
+}
+.table {
+    width: 50% ;
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin: auto;
+}
+.question{
+    text-align: center;
+}
+.inputStyle{
+    width: 500px;
+}
