@@ -11,59 +11,66 @@
 
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-
 </head>
 <body>
-    <div >
-        <h2 class="head">成绩单</h2>
-        <table class="table table-bordered">
-            <tr>
-                <td>姓名</td>
-                <td>语文成绩</td>
-                <td>数学成绩</td>
-                <td>.编程成绩</td>
-                <td>平均分</td>
-                <td>总分</td>
-            </tr>
-            <tr>
-                <td>小明</td>
-                <td>55</td>
-                <td>88</td>
-                <td>33</td>
-                <td>75</td>
-                <td>214</td>
-            </tr>
-            <tr>
-                <td>小红</td>
-                <td>55</td>
-                <td>84</td>
-                <td>65</td>
-                <td>78</td>
-                <td>231</td>
-            </tr>
-        </table>
-    </div>
-    <div>
-        <form  class="question" name="stuScore " onsubmit="testMessage(document.getElementById('inputStu').value)">
 
-            <h3>请输入学生信息(格式：姓名,学号,民族,班级,学科:成绩...，按回车提交:</h3>
-            <input class="inputStyle" type="text" id="inputStu"></input>
-            <input type="submit" id="submit" value="确认">
-            <h3>请输入要打印的学生的学号（格式： 学号, 学号,...，按回车提交：</h3>
-            <input class="inputStyle" type="text" id="check"></input>
-            <input type="submit" id="submit-check" value="确认" onclick="">
-            <table class="table table-bordered">
+
+<ul id="myTab" class="nav nav-tabs">
+    <li class="active">
+        <a href="#home" data-toggle="tab">
+            添加一个学生
+        </a>
+        <>
+    <li><a href="#view" data-toggle="tab">查看学生成绩</a><>
+    <li><a href="#change" data-toggle="tab">修改学生成绩</a><>
+
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade in active" id="home">
+        <div>
+            <form  class="question" name="stuScore " onsubmit="testMessage(document.getElementById('inputStu').value)">
+                <h5>格式：姓名,学号,民族,班级,学科:成绩...，按回车提交:</h5>
+                <input class="inputStyle" type="text" id="inputStu"></input>
+                <input class="blue button" type="submit" id="submit" value="确认">
+            </form>
+
+        </div>
+    </div>
+
+    <div class="tab-pane fade question" id="view">
+        <h5>格式： 学号, 学号,...，按回车提交：</h5>
+        <input class="inputStyle" type="text" id="check"></input>
+        <input class="blue button" type="submit" id="submit-check" value="确认" onclick="printSheet(document.getElementById('check').value,event)">
+        <div >
+            <h2 class="head">成绩单</h2>
+            <table class="table table-bordered" id="stuTable">
+                <tr>
+
+                </tr>
 
             </table>
+        </div>
 
-        </form>
+    </div>
+
+    <div class="tab-pane fade question" id="change">
+        <h5>格式： 学号, 学号,...，按回车提交：</h5>
+        <input class="inputStyle" type="text" id="changeText"></input>
+        <input class="blue button" type="submit" id="submit-change" value="确认" onclick="changeStu(document.getElementById('changeText').value)">
+        <table class="table table table-striped" id="changeTable">
+            <tr>
+
+            </tr>
+
+        </table>
 
     </div>
 
 
+
+</div>
 
 
 <!--write your code here-->
 </body>
-</html>
+<ml>
